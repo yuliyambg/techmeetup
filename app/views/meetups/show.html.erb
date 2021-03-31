@@ -9,4 +9,17 @@ Link: <%= @meetup.link %>
 <br>
 
 Comments
+
 <hr>
+
+<div>
+<%= form_for ([@meetup, @comment]) do |f| %>
+  <%=f.text_field :content %>
+  <%=f.submit %>
+<% end %>
+</div>
+
+<hr>
+<% @comments.each do |comment| %>
+  <li> <%= comment.content %> </li><br>
+<% end %>

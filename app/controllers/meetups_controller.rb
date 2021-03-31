@@ -6,7 +6,8 @@ class MeetupsController < ApplicationController
 
     def show
        @meetup = Meetup.where(id: params[:id]).first
-       
+       @comment = Comment.new
+       @comments = @meetup.comments
     end
 
 
