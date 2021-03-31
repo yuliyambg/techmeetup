@@ -1,0 +1,17 @@
+<h1>TechMeetups</h1>
+
+  <div>
+    <%= button_to "Create", new_meetup_path, :method => "get" %>
+  </div>
+
+<% @meetups.each do |meetup| %>
+
+  <div>
+    <%= image_tag meetup.image_url %> <br>
+    Title: <%= link_to meetup.title, meetup_path(meetup) %> <br>
+    Date-Time:<%= meetup.date_time %><br>
+    Description: <%= meetup.description %><br>
+    Link: <%= meetup.link %>
+  </div>
+
+<% end %>
