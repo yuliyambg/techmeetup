@@ -1,0 +1,16 @@
+<h1>Create Meetup</h1>
+
+<%= form_for Meetup.new do |f| %>
+    <%= f.label :title%>
+    <%= f.text_field  :title %> <br>
+    <%= f.label :date_time%>
+    <%= f.datetime_field  :date_time %> <br>
+    <%= f.label :description %>
+    <%= f.text_field  :description %> <br>
+    <%= f.label :image_url %>
+    <%= f.text_field  :image_url%> <br>
+    <%= f.label :link %>
+    <%= f.text_field  :link%><br>
+    <br>
+    <%= f.submit %>
+  <% end %>
