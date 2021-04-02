@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+meetup1 = Meetup.create(title: "ruby", date_time: "2021-03-31 10:20:00.000000000 +0000", description: "new ruby meetup", image_url: "https://images.unsplash.com/photo-1519389950473-47...", link: "examplelink")
+meetup2 = Meetup.create(title: "rails", date_time: "2021-03-31 10:20:00.000000000 +0000", description: "rails meetup", image_url: "https://images.unsplash.com/photo-1588196749597-9f...", link: "examplelink2")
+meetup3 = Meetup.create(title: "JS", date_time: "2021-04-01 11:27:00.000000000 +0000", description: "Javascript", image_url: "https://images.unsplash.com/photo-1606770347238-77...", link: "examplelink3")
+
+meetup1.comments.create(content: "great ruby meetup")
+meetup2.comments.create(content: "great rails meetup")
+meetup3.comments.create(content: "great JS meetup")
