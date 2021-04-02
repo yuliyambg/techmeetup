@@ -3,6 +3,8 @@
   <div>
     <%= button_to "Create", new_meetup_path, :method => "get" %>
   </div>
+  
+  <%= content_for :upcoming_meetups, @upcoming_meetups %>
 
 <% @meetups.each do |meetup| %>
 

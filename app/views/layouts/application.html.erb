@@ -11,6 +11,14 @@
   </head>
 
   <body>
+
+  <div>
+    <h2> Upcoming Events</h2>
+      <% @upcoming_meetups.each do |meetup| %>
+        <%= link_to meetup.title, meetup_path(meetup) %><br>
+    <%= meetup.date_time %><br>
+   <% end %>
+</div>
     <%= yield %>
   </body>
 </html>

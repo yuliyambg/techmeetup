@@ -2,15 +2,18 @@ class MeetupsController < ApplicationController
 
     def index
        @meetups = Meetup.all
+       @upcoming_meetups = Meetup.upcoming_meetups
     end
 
     def show
        @meetup = Meetup.where(id: params[:id]).first
        @comment = Comment.new
        @comments = @meetup.comments
+       @upcoming_meetups = Meetup.upcoming_meetups
     end
 
     def new
+      @upcoming_meetups = Meetup.upcoming_meetups
     end
 
     def create
