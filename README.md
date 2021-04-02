@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # yuliyambg-final
 final project
 =======
@@ -28,6 +27,4 @@ Bug reports and pull requests are welcome on GitHub.
 
 ## License
 
-All source code is available under the MIT License.
-
->>>>>>> 29fc911 (meetup, comment models added)
+All source code is available under the MIT License
