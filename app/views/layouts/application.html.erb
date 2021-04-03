@@ -12,6 +12,14 @@
 
   <body>
 
+<div>
+  <%= form_tag meetups_search_path do %>
+  Search <%= text_field_tag :search_text %>
+    <%= submit_tag 'Search' %>
+  <% end %>
+</div>
+
+
   <div>
     <h2> Upcoming Events</h2>
       <% @upcoming_meetups.each do |meetup| %>

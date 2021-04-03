@@ -5,5 +5,8 @@ class Meetup < ApplicationRecord
         Meetup.all.order(date_time: :desc).limit(3)
     end
 
+    def self.search_meetups(search_text)
+        (Meetup.where("title LIKE '%#{search_text}%'"))
+    end
 
 end
