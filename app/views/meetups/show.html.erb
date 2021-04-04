@@ -8,16 +8,22 @@ Link: <%= @meetup.link %>
 <br>
 <br>
 
-Comments
+<p>Login in order to post a comment</p>
+<%= link_to 'Login', login_path %>
+<%= link_to 'Sign Up', new_user_path %>
+
+<h4>Comments</h4>
 
 <hr>
 
+<% if current_user %>
 <div>
 <%= form_for ([@meetup, @comment]) do |f| %>
   <%=f.text_field :content %>
   <%=f.submit %>
 <% end %>
 </div>
+<% end %>
 
 <hr>
 <% @comments.each do |comment| %>
