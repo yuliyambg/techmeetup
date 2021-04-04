@@ -19,6 +19,10 @@
   <% end %>
 </div>
 
+<% if current_user %>
+    <%= link_to 'Sign Off', session_path,
+    data: {:confirm => 'Are you sure?'}, :method => :delete %>
+<% end %>
 
   <div>
     <h2> Upcoming Events</h2>

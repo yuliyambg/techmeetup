@@ -1,10 +1,8 @@
 class MeetupsController < ApplicationController
-  # before_action :set_upcoming_meetups
   skip_before_action :verify_authenticity_token
 
     def index
        @meetups = Meetup.all
-      #  @upcoming_meetups = Meetup.upcoming_meetups
     end
 
     def search
@@ -20,11 +18,9 @@ class MeetupsController < ApplicationController
        @meetup = Meetup.where(id: params[:id]).first
        @comment = Comment.new
        @comments = @meetup.comments
-      #  @upcoming_meetups = Meetup.upcoming_meetups
     end
 
     def new
-      # @upcoming_meetups = Meetup.upcoming_meetups
     end
 
     def create
@@ -40,10 +36,5 @@ class MeetupsController < ApplicationController
     end
 
     private
-
-
-    # def set_upcoming_meetups
-    #   @upcoming_meetups = Meetup.upcoming_meetups
-    # end
 
 end
