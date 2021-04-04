@@ -1,4 +1,4 @@
-class Comment < ApplicationRecord
+class MeetupsUser < ApplicationRecord
     belongs_to :meetup
     belongs_to :user
 
