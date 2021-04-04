@@ -1,5 +1,5 @@
 class MeetupsController < ApplicationController
-  before_action :set_upcoming_meetups
+  # before_action :set_upcoming_meetups
   skip_before_action :verify_authenticity_token
 
     def index
@@ -42,8 +42,8 @@ class MeetupsController < ApplicationController
     private
 
 
-    def set_upcoming_meetups
-      @upcoming_meetups = Meetup.upcoming_meetups
-    end
+    # def set_upcoming_meetups
+    #   @upcoming_meetups = Meetup.upcoming_meetups
+    # end
 
 end
