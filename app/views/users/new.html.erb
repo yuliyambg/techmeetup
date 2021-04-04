@@ -1,4 +1,17 @@
 <h1>Create New User</h1>
+
+<div class="err">
+
+<% if @user.errors.any? %>
+    <h2>There are some errors:</h2>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+<% end %>
+</div>
+
 <%=form_for User.new do |f| %>
 
   <div>
