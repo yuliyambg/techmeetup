@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+
+ .err {
+    color: #B00100;
+}
