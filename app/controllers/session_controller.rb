@@ -1,5 +1,5 @@
 class SessionController < ApplicationController 
-    before_action :set_upcoming_meetups
+   
     
     def new
     
@@ -28,10 +28,6 @@ class SessionController < ApplicationController
       redirect_to meetups_path
     end
 
-    private
 
-    def set_upcoming_meetups
-      @upcoming_meetups = Meetup.upcoming_meetups
-    end
 
 end
