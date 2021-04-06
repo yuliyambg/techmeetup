@@ -76,4 +76,16 @@ Rails.application.configure do
  
   # Custom
   config.hosts << "yuliyambg-all-aboard-bootcamp-yuliyambg-final-xc98-3000.githubpreview.dev"
+
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :user_name => '0805e43267266b',
+    :password => 'f728b3312bd880',
+    :address => 'smtp.mailtrap.io',
+    :domain => 'smtp.mailtrap.io',
+    :port => '2525',
+    :authentication => :cram_md5
+  }
+  
 end

@@ -62,14 +62,23 @@
   </nav>
 
 
-  <div>
-    <h2> Upcoming Events</h2>
-      <% Meetup.upcoming_meetups.each do |meetup| %>
-        <%= link_to meetup.title, meetup_path(meetup) %><br>
-    <%= meetup.date_time %><br>
-   <% end %>
-</div>
+  <main class="container">
+    <div class="row">
 
-    <%= yield %>
+      <div class="col-md-8">
+        <%= yield %>
+      </div>
+
+    <div class="col-md-4">
+      <h2> Upcoming Events</h2>
+        <% Meetup.upcoming_meetups.each do |meetup| %>
+        <%= link_to meetup.title, meetup_path(meetup) %><br>
+        <%= meetup.date_time %><br>
+        <% end %>
+    </div>
+  
+    </div>
+  </main>
+
   </body>
 </html>

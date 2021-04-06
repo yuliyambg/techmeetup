@@ -20,6 +20,17 @@ class MeetupsController < ApplicationController
         # flash[:notice] = 'this'
       else
         @meetup.users << @user
+
+        EventMailer.welcome_email(@user, @meetup).deliver
+
+     #Welcome email
+    EventMailer.delay.welcome_email(@user, @meetup)
+    #24 hours in advance
+    EventMailer.delay(run_at: (@meetup.date_time - 24.hours)).twenty_four_hours_email(@user, @meetup)
+    #1 hour in advance
+    EventMailer.delay(run_at: (@meetup.date_time - 1.hours)).one_hour_email(@user, @meetup)
+
+
       end
       redirect_to meetup_path(@meetup)
     end
