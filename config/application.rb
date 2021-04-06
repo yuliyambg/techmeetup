@@ -18,5 +18,8 @@ module Techmeetup
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # Using delayed_job for email queue
+    config.active_job.queue_adapter = :delayed_job
   end
 end
