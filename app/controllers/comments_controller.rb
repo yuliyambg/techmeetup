@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 before_action :set_meetup
-# skip_before_action :verify_authenticity_token
+skip_before_action :verify_authenticity_token
 
     def index
         @comments = @meetup.comments
