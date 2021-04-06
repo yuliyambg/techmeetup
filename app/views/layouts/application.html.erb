@@ -75,6 +75,13 @@
         <%= link_to meetup.title, meetup_path(meetup) %><br>
         <%= meetup.date_time %><br>
         <% end %>
+        
+        <h2> Popular Events</h2>
+        <% Meetup.popular_events.each do |event| %>
+          <%= link_to event.title, meetup_path(event) %><br>
+          <%= event.date_time %><br>
+        <% end %>
+
     </div>
   
     </div>
