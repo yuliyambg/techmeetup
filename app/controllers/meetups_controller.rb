@@ -13,6 +13,17 @@ class MeetupsController < ApplicationController
       end
     end
 
+    def attend
+      @meetup = Meetup.find(params[:id])
+      @user = User.find(session[:user_id])
+      if @meetup.users.include?(@user)
+        # flash[:notice] = 'this'
+      else
+        @meetup.users << @user
+      end
+      redirect_to meetup_path(@meetup)
+    end
+
 
     def show
        @meetup = Meetup.where(id: params[:id]).first

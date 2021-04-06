@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get 'meetups/search', to:'meetups#search'
   post 'meetups/search', to:'meetups#search'
 
+  post 'meetups/:id/attend', to:'meetups#attend'
+
   resources :meetups do
     resources :comments
   end

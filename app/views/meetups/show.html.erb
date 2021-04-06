@@ -1,4 +1,18 @@
 <h1> Current Event </h1>
+
+<% if current_user %>
+  <% if current_user.attending_event(@meetup) %>
+    <%= "already attending" %>
+  <% else %>
+    <%= button_to "Attend Meetup", { action: :attend }, :method => :post %> <br>
+  <% end %>
+<% else %>
+  <p>Login in order to create or attend and event</p>
+  <%= link_to 'Login', login_path %>
+  <%= link_to 'Sign Up', new_user_path %>
+<% end %>
+<br>
+
 Title: <%= @meetup.title %> <br>
 Date-Time:<%= @meetup.date_time %><br>
 <%= image_tag @meetup.image_url %><br>
