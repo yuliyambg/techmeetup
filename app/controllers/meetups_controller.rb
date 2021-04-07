@@ -47,16 +47,21 @@ class MeetupsController < ApplicationController
 
     def create
       # raise params.inspect
-      title = params[:meetup][:title]
-      date_time = params[:meetup][:date_time]
-      description = params[:meetup][:description]
-      image_url = params[:meetup][:image_url]
-      link = params[:meetup][:link]
-      @meetup = Meetup.create(title: title, date_time: date_time, description: description, image_url: image_url, link: link)
+      # title = params[:meetup][:title]
+      # date_time = params[:meetup][:date_time]
+      # description = params[:meetup][:description]
+      # image_url = params[:meetup][:image_url]
+      # link = params[:meetup][:link]
+      # @meetup = Meetup.create(title: title, date_time: date_time, description: description, image_url: image_url, link: link)
   
+      @meetup = Meetup.create(meetup_params)
+
       redirect_to :meetups
     end
 
     private
 
+    def meetup_params
+      params.require(:meetup).permit(:title, :date_time, :description, :image_url, :link)
+  end
 end
