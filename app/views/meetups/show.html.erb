@@ -13,7 +13,7 @@
 <br>
 
 Title: <%= @meetup.title %> <br>
-Date-Time:<%= @meetup.date_time %><br>
+Date-Time:<%= @meetup.date_time.strftime("%m-%e-%y %H:%M") %><br>
 <%= image_tag @meetup.image_url %><br>
 Description: <%= @meetup.description %><br>
 Link: <%= @meetup.link %>

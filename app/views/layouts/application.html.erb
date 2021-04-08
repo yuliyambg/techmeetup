@@ -71,17 +71,22 @@
       </div>
 
     <div class="col-md-4">
+
+    <div class="p-4 mb-3 bg-light rounded">
       <h2> Upcoming Events</h2>
         <% Meetup.upcoming_meetups.each do |meetup| %>
         <%= link_to meetup.title, meetup_path(meetup) %><br>
-        <%= meetup.date_time %><br>
+        <%= meetup.date_time.strftime("%m-%e-%y %H:%M") %><br>
         <% end %>
-        
+    </div>
+
+    <div class="p-4 mb-3 bg-light rounded">
         <h2> Popular Events</h2>
         <% Meetup.popular_events.each do |event| %>
           <%= link_to event.title, meetup_path(event) %><br>
-          <%= event.date_time %><br>
+          <%= event.date_time.strftime("%m-%e-%y %H:%M") %><br>
         <% end %>
+    </div>
 
     </div>
   

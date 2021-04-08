@@ -21,7 +21,7 @@
               <%= image_tag(meetup.image_url, width: "100%", height: "200px") %> <br>
               <div class="card-body">
                 <h5 class="card-title"><%= link_to meetup.title, meetup_path(meetup) %></h5>
-                <p class=card-text><%= meetup.date_time %><br></p>
+                <p class=card-text><%= meetup.date_time.strftime("%m-%e-%y %H:%M") %><br></p>
                 <p class="card-text"><%= meetup.description %></p>
                 
                 <%= link_to "See More", meetup_path(meetup), :class => "btn btn-primary" %> 
