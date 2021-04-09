@@ -54,6 +54,8 @@
           <% end %>
 
         </ul>
+
+        <p id="weather" style="margin-right: 2rem; margin-top: revert; margin-bottom: revert;">Loading ...</p>
         <%=form_tag meetups_search_path, class: "d-flex" do%>
           <%= text_field_tag :search_text,"", {class: "form-control me-2", type: "search", placeholder: "Search"} %>
           <%= submit_tag 'Search',class: "btn btn-outline-success" %>
