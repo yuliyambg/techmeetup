@@ -2,27 +2,40 @@
 
 <% if current_user %>
   <% if current_user.attending_event(@meetup) %>
+  <h5 class="fst-italic text-primary">
     <%= "already attending" %>
+    </h5>
   <% else %>
     <%= button_to "Attend Meetup", { action: :attend }, :method => :post %> <br>
   <% end %>
 <% else %>
-  <p>Login in order to create or attend and event</p>
-  
+<h5 class="fst-italic text-primary">
+   Login in order to create or attend and event
+  </h5>
 <% end %>
 <br>
 
-Title: <%= @meetup.title %> <br>
+
+<div class="col">
+<div class="card" style="width: 40rem;">
+
+<h5 class="card-title">Title: <%= @meetup.title %> </h5>
 Date-Time:<%= @meetup.date_time.strftime("%m-%e-%y %H:%M") %><br>
 <%= image_tag @meetup.image_url %><br>
-Description: <%= @meetup.description %><br>
-Link: <%= @meetup.link %>
+<p class=card-text>Description: <%= @meetup.description %><br></p>
+<p class=card-text>Link: <%= @meetup.link %></p>
+
+</div>
+</div>
 
 <br>
 <br>
 
 
-<h4>Comments</h4>
+
+<article class="blog-post">
+
+<h2 class="blog-post-title">Comments</h2>
 
 <hr>
 
@@ -37,5 +50,9 @@ Link: <%= @meetup.link %>
 
 <hr>
 <% @comments.each do |comment| %>
-  <li> <%= comment.content %> </li><br>
-<% end %>
+  <ul>
+    <li> <%= comment.content %> </li><br>
+  </ul>
+  <% end %>
+
+</article>

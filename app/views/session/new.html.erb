@@ -4,25 +4,26 @@
 
 <%= form_tag('/login', method: :post) do %>
 
-  <div>
-    <%= label_tag(:email, "Your email:") %>
-
-    <%= email_field_tag(:email, nil) %>
+  <div class='mb-3'>
+    <%= label_tag(:email, "Your email:", {class: "form-label"}) %>
+    <%= email_field_tag(:email, nil ,{class: "form-control"} ) %>
   </div>
-  <br>
 
-  <div>
-    <%= label_tag(:password, "Your password:") %>
-    <%= password_field_tag(:password, nil) %>
+
+  <div class="mb-3">
+    <%= label_tag(:password, "Your password:", {class: "form-label"}) %>
+    <%= password_field_tag(:password, nil, {class: "form-control"} ) %>
   </div>
-  <br>
 
+  
   <div>
-    <%= submit_tag("Log In") %>
+    <%= submit_tag("Log In", {class:"btn btn-primary"}) %>
   </div>
 
   <div>
     <%= link_to 'Sign Up', new_user_path %>
   </div>
 
+
 <% end %>
+
