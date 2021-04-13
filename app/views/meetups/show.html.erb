@@ -51,7 +51,10 @@ Date-Time:<%= @meetup.date_time.strftime("%m-%e-%y %H:%M") %><br>
 <hr>
 <% @comments.each do |comment| %>
   <ul>
-    <li> <%= comment.content %> </li><br>
+    <li> <%= comment.content %> </li>
+  <i> by:</i> <%= comment.user.first_name%>
+  <i> </i> <%= comment.user.last_name.first%>.
+  <i> at:</i> <%= comment.created_at.strftime("%m-%e-%y %H:%M")%>
   </ul>
   <% end %>
 

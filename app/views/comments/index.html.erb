@@ -1,6 +1,7 @@
 <% @comments.each do |comment| %>
   <div>  
     <%= comment.content %>
-    <%= comment.created_at%>
+    By: <%= comment.user.last_name%>
+    at: <%= comment.created_at%>
   </div>
   <%end %>
