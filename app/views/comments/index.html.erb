@@ -1,3 +1,6 @@
 <% @comments.each do |comment| %>
+  <div>  
     <%= comment.content %>
+    <%= comment.created_at%>
+  </div>
   <%end %>
