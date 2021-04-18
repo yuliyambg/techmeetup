@@ -11,8 +11,12 @@ skip_before_action :verify_authenticity_token
 
     def create
         # raise params.inspect
-
-        @comment = @meetup.comments.create(comment_params)
+        #debugger 
+        comment = @meetup.comments.new
+        comment.user_id = current_user.id
+        comment.update(comment_params)
+        comment.save
+        # @comment = @meetup.comments.create(comment_params)
 
         redirect_to  meetup_path(@meetup)
     end
@@ -25,7 +29,7 @@ skip_before_action :verify_authenticity_token
     end
 
     def comment_params
-        params.require(:comment).permit(:content, :meetup_id)
+        params.require(:comment).permit(:content, :meetup_id, :user_id)
     end
 
 end
