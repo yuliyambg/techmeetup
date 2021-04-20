@@ -1,5 +1,6 @@
 <h1> Current Event </h1>
 
+<% unless @meetup.passed_event? %>
 <% if current_user %>
   <% if current_user.attending_event(@meetup) %>
   <h5 class="fst-italic text-primary">
@@ -13,6 +14,7 @@
    Login in order to create or attend and event
   </h5>
 <% end %>
+<% end %>
 <br>
 
 
@@ -23,7 +25,7 @@
 Date-Time:<%= @meetup.date_time.strftime("%m-%e-%y %H:%M") %><br>
 <%= image_tag @meetup.image_url %><br>
 <p class=card-text>Description: <%= @meetup.description %><br></p>
-<p class=card-text>Link: <%= @meetup.link %></p>
+<% if current_user %><p class=card-text>Link: <%= @meetup.link %></p><% end %>
 
 </div>
 </div>

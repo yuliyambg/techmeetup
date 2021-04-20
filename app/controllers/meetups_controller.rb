@@ -2,7 +2,7 @@ class MeetupsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
     def index
-       @meetups = Meetup.all
+       @meetups = Meetup.upcoming_events
     end
 
     def search

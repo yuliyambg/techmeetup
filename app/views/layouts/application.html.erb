@@ -43,7 +43,7 @@
             <% else %>
 
             <li class="nav-item">
-              <%= link_to 'Create Event', new_meetup_path, :method => "get", class: "nav-link"  %>
+              <%= link_to 'Create Event', new_meetup_path, :method => "get", class: "nav-link active"  %>
             </li>
 
             <li class="nav-item">
@@ -85,10 +85,18 @@
     <div class="p-4 mb-3 bg-light rounded">
         <h2> Popular Events</h2>
         <% popular_events.each do |event| %>
-          <%= link_to event.title, meetup_path(event) %><br>
+          <%= link_to event.title, meetup_path(event) %>(<%= event.number_of_users_attending %>)<br>
           <%= event.date_time.strftime("%m-%e-%y %H:%M") %><br>
         <% end %>
     </div>
+
+    <div class="p-4 mb-3 bg-light rounded">
+    <h2> Past Events</h2>
+    <% past_events.each do |event| %>
+      <%= link_to event.title, meetup_path(event) %><br>
+      <%= event.date_time.strftime("%m-%e-%y %H:%M") %><br>
+    <% end %>
+</div>
 
     </div>
   

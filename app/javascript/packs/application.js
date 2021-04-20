@@ -13,10 +13,11 @@ Turbolinks.start()
 ActiveStorage.start()
 
 function getWeather() {
-    navigator.geolocation.getCurrentPosition(onSuccess);    
-  }
+    navigator.geolocation.getCurrentPosition(onSuccess)    
+}
   
 function onSuccess(pos) {
+    
     const weatherText = document.getElementById('weather');
   
     
@@ -25,6 +26,7 @@ function onSuccess(pos) {
         .then(data => {
           weatherText.innerHTML = data.name + ": " + data.main.temp + "&deg; F";
         })
+  
   }
   
   document.addEventListener('DOMContentLoaded', getWeather);
